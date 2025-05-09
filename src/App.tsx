@@ -279,14 +279,20 @@ export default function App() {
   return (
     <div className="min-h-screen overflow-y-scroll">
       <header className="sticky top-0 z-10 bg-light dark:bg-dark p-4 border-b-2 border-slate-200 dark:border-slate-800">
-        <a href="https://github.com/thomasballinger/convex-typeahead-search">
+        <a
+          href="https://github.com/thomasballinger/convex-typeahead-search"
+          className="text-blue-600 dark:text-blue-400 hover:underline"
+        >
           code
         </a>
       </header>
       <main className="p-8 flex flex-col gap-16">
         <h1 className="text-4xl font-bold text-center">
           Convex Fulltext Search{" "}
-          <a href="https://github.com/thomasballinger/convex-typeahead-search">
+          <a
+            href="https://github.com/thomasballinger/convex-typeahead-search"
+            className="text-blue-600 dark:text-blue-400 hover:underline"
+          >
             code
           </a>
         </h1>
