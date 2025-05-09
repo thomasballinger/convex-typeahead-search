@@ -14,7 +14,7 @@ type QueryReturn<T> = {
 // simple: single previous result
 export const useStableQuery = ((name, args) => {
   const result = useQuery(name, args);
-  const stored = useRef(result); // ref objects are stable between rerenders
+  const stored = useRef(result);
 
   if (result !== undefined) {
     stored.current = result;
@@ -36,7 +36,6 @@ export const useCachedStableQuery = ((name, args) => {
 
   // Store the result if not loading
   if (result !== undefined) {
-    // Evict oldest entries if we're at capacity
     if (cache.current.size >= MAX_CACHE_SIZE) {
       const firstKey = cache.current.keys().next().value;
       if (firstKey) {
@@ -52,6 +51,8 @@ export const useCachedStableQuery = ((name, args) => {
   if (result !== undefined) {
     return { data: result, isPrevious: false, isStale: false };
   }
+
+  // choose cached results for this query instead of cached results for a different query
   if (cachedResult !== undefined) {
     return { data: cachedResult, isPrevious: false, isStale: true };
   }
@@ -60,6 +61,7 @@ export const useCachedStableQuery = ((name, args) => {
       ? cache.current.get(lastPresentCacheKey.current)
       : undefined;
 
+  // fall back to whatever the last result we had was for stability
   if (lastCached) {
     return { data: lastCached, isPrevious: true, isStale: false };
   }
