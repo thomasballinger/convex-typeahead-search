@@ -280,7 +280,7 @@ export default function App() {
     <div className="min-h-screen overflow-y-scroll">
       <header className="sticky top-0 z-10 bg-light dark:bg-dark p-4 border-b-2 border-slate-200 dark:border-slate-800">
         <a
-          href="https://github.com/thomasballinger/convex-typeahead-search"
+          href="https://github.com/thomasballinger/convex-typeahead-search/blob/main/src/searchHooks.ts"
           className="text-blue-600 dark:text-blue-400 hover:underline"
         >
           code
@@ -290,7 +290,7 @@ export default function App() {
         <h1 className="text-4xl font-bold text-center">
           Convex Fulltext Search{" "}
           <a
-            href="https://github.com/thomasballinger/convex-typeahead-search"
+            href="https://github.com/thomasballinger/convex-typeahead-search/blob/main/src/searchHooks.ts"
             className="text-blue-600 dark:text-blue-400 hover:underline"
           >
             code
